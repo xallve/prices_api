@@ -20,5 +20,4 @@ async def prices_view(request):
         req_data = {}
         for d in data:
             req_data.update(d)
-        print(req_data)
         return JsonResponse(req_data)

@@ -1,3 +1,8 @@
+import asyncio
+import functools
+from concurrent.futures import ThreadPoolExecutor
+
+
 class BinancePairMixin:
     """
     Mixin classes to unify pair param. E.g. for binance it should be
@@ -25,3 +30,18 @@ class KrakenPairMixin:
         formatted_pair = f'{base_currency}/{quote_currency}'
 
         return formatted_pair
+
+
+def force_async(fn):
+    """
+    Decorator
+    Turns a sync function nto an async function using threads
+    """
+    pool = ThreadPoolExecutor()
+
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        future = pool.submit(fn, *args, **kwargs)
+        return asyncio.wrap_future(future)  # make it awaitable
+
+    return wrapper
