@@ -27,7 +27,6 @@ class KrakenWebSocket(ExchangeWebSocket, KrakenPairMixin):
         """
         data = json.loads(message)
         if not isinstance(data, dict):
-            print(data)
             price = (float(data[1].get('a')[0]) + float(data[1].get('b')[0]))/2  # Get average of bid and ask
             symbol = data[-1]
             return {symbol: price}

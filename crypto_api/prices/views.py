@@ -16,5 +16,9 @@ async def prices_view(request):
             print(e)
             return JsonResponse({'error': 'Invalid JSON'}, status=400)
         data = await get_prices(pair, exchange)
-        data = json.dumps(data)
-        return JsonResponse(data, safe=False)
+        # Unpack data to dict to return as JSON
+        req_data = {}
+        for d in data:
+            req_data.update(d)
+        print(req_data)
+        return JsonResponse(req_data)

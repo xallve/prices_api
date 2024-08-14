@@ -21,7 +21,6 @@ class BinanceWebSocket(ExchangeWebSocket, BinancePairMixin):
 
     async def process_message(self, message):
         data = json.loads(message)
-        print(data)
         if data != {'result': None, 'id': 1}:
             # Handle prices data if no ticker is specified because it returns as list of dicts
             if isinstance(data, list):

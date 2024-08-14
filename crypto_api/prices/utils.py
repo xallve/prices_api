@@ -4,6 +4,7 @@ from .exchange.kraken import KrakenWebSocket
 
 
 async def get_prices(pair=None, exchange=None):
+    """Start price aggregation tasks"""
     tasks = []
 
     if exchange in [None, 'binance']:
