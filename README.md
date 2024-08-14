@@ -35,5 +35,13 @@ You can use Postman to test endpoint
 | `pair`        | `string`   | your desired cryptopair    |
 
 
+## Example
 
+```json
+{
+    "pair": "BTC/USDT",
+    "exchange": "Binance"
+}
+```
+to retrieve BTC price data from binance
 
