@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
-    command: python prices/manage.py runserver 0.0.0.0:8000
+      - .:/crypto_api
+    command: python crypto_api/manage.py runserver 0.0.0.0:8000
     environment:
       - DEBUG=TRUE

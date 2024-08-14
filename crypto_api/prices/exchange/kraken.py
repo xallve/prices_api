@@ -1,7 +1,7 @@
 from .base import ExchangeWebSocket
 import json
-from prices.mixin.unifymixins import KrakenPairMixin
-from prices.kraken_pairs import KRAKEN_PAIRS
+from .mixin.unifymixins import KrakenPairMixin
+from .kraken_pairs import KRAKEN_PAIRS
 
 
 class KrakenWebSocket(ExchangeWebSocket, KrakenPairMixin):

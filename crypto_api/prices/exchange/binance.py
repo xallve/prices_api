@@ -1,6 +1,6 @@
-from prices.base import ExchangeWebSocket
+from .base import ExchangeWebSocket
 import json
-from prices.mixin.unifymixins import BinancePairMixin
+from .mixin.unifymixins import BinancePairMixin
 
 
 class BinanceWebSocket(ExchangeWebSocket, BinancePairMixin):

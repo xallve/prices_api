@@ -1,7 +1,7 @@
 import json
 
 from django.http import JsonResponse
-from prices.utils import get_prices
+from .utils import get_prices
 
 
 async def prices_view(request):

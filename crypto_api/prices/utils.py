@@ -1,6 +1,6 @@
 import asyncio
-from prices.exchange.binance import BinanceWebSocket
-from prices.exchange.kraken import KrakenWebSocket
+from .exchange.binance import BinanceWebSocket
+from .exchange.kraken import KrakenWebSocket
 
 
 async def get_prices(pair=None, exchange=None):
